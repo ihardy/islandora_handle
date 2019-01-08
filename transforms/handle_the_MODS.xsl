@@ -16,14 +16,14 @@
     <xsl:template match="mods:mods">
         <xsl:copy>
             <xsl:apply-templates select="node()|@*"/>
-            <identifier type="hdl">
+            <identifier type="uri">
                 <xsl:value-of select="$handle_value"/>
             </identifier>
         </xsl:copy>
     </xsl:template>
     
     <!-- delete handle ID at the top... -->
-    <xsl:template match="mods:mods/mods:identifier[@type='hdl']"/>
+    <xsl:template match="mods:mods/mods:identifier[@type='uri']"/>
     
     <xsl:template match="node()|@*">
        <xsl:copy>
